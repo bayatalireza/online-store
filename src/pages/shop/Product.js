@@ -6,8 +6,7 @@ export default function Product(props) {
   const { cartItems, addToCart, removeFromCart } = useContext(ShopContext);
 
   const isInCart = cartItems?.some((item) => item.id === id);
-  console.log(cartItems.map(item => item.id));
-  
+
   return (
     <div className="col-3">
       <img src={productImage} alt="#" className="w-100" />
@@ -17,8 +16,7 @@ export default function Product(props) {
         +
       </button>
       <span className="mx-1">
-      {cartItems?.filter((item) => item.id === id)[0]?.count}
-        
+        {cartItems?.filter((row) => row.id === id)[0]?.count}
       </span>
       {isInCart && (
         <button
